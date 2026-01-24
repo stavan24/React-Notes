@@ -112,7 +112,7 @@ Once you are comfortable with core topics, these will take you to **next level**
 Learning React = **project-based learning**. Examples:
 
 - Portfolio Website  
-- Quiz App (like your QuizCraft)  
+- Quiz App 
 - Expense Tracker  
 - Dashboard / Admin Panel  
 - Mini E-commerce site  
@@ -130,6 +130,4 @@ Learning React = **project-based learning**. Examples:
 
 ---
 
-If you want, bro, I can make a **README version with all topics + mini code examples inline for each topic**, so it’s like a **full React course inside one README**.  
 
-Do you want me to do that?
