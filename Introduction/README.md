@@ -60,3 +60,41 @@ React uses **Virtual DOM** to make UI updates **fast and smooth**:
 ```text
 Real DOM   → Updates whole page → Slow
 Virtual DOM → Updates only changed part → Smooth ⚡
+
+
+// Navbar.jsx
+import React from "react";
+
+function Navbar() {
+  return (
+    <nav>
+      <h1>My Website</h1>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+  );
+}
+
+export default Navbar;
+
+
+// Product.jsx
+import React from "react";
+
+function Product({ name, price }) {
+  return (
+    <div>
+      <h2>{name}</h2>
+      <p>Price: ${price}</p>
+    </div>
+  );
+}
+
+export default Product;
+
+// Usage in App.jsx
+<Product name="Sneakers" price={999} />
+<Product name="T-shirt" price={499} />
