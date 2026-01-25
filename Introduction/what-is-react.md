@@ -37,13 +37,9 @@ React updates only the **parts of the UI that change** using a **Virtual DOM**, 
 
 ## 🔹 Example
 
-**Traditional approach (manual DOM update):**
+**React Advantage:**
 
 ```javascript
-document.getElementById("count").innerText = 1;
-
-**And with React
-```react
 import { useState } from "react";
 
 function Counter() {
