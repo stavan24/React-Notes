@@ -38,8 +38,6 @@ React, on the other hand, updates only the parts of the UI that change, using a 
 
 **Traditional approach (manual DOM updates):**
 
-```javascript
-document.getElementById("count").innerText = 1;
 
 ```react
 import { useState } from "react";
