@@ -7,7 +7,7 @@ It makes websites **fast, dynamic, and organized**.
 💻 **Used for:** Frontend / Web Development  
 🧩 **Based on:** Components
 
----
+---  
 
 ## 🔹 Simple Explanation
 
