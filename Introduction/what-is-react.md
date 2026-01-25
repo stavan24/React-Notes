@@ -41,3 +41,18 @@ React updates only the **parts of the UI that change** using a **Virtual DOM**, 
 
 ```javascript
 document.getElementById("count").innerText = 1;
+
+**And with React
+```react
+import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
