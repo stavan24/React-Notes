@@ -4,7 +4,11 @@
 It helps developers create **dynamic, fast, and reusable components**.
 
 - 🏢 **Created by:** Facebook (Meta)  
+<<<<<<< HEAD
 - 💻 **Purpose:** Frontend development  
+=======
+- 💻 **Purpose:** Frontend development   
+>>>>>>> 5a824d9823f5e00571841e6496f63ec9e52e9660
 - 🧩 **Core Concept:** Component-based architecture
 
 ---
