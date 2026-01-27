@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # ⚛️ React Deep Dive: Flow & Structure
 
 This repository contains my learning notes from the "Chai aur Code" React series. These notes focus on the inner workings of React, folder structures, and the logic behind how code translates into a webpage.
