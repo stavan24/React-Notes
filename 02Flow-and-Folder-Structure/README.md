@@ -4,7 +4,7 @@
 This repository contains my learning notes from the "Chai aur Code" React series. These notes focus on the inner workings of React, folder structures, and the logic behind how code translates into a webpage.
 
 ---
-
+```
 ## 🚀 1. How React Actually Works (The Big Picture)
 
 A lot of beginners think React is magic, but it's just **JavaScript** being injected into **HTML**.
@@ -14,11 +14,11 @@ A lot of beginners think React is magic, but it's just **JavaScript** being inje
 2. **The Brain**: A JavaScript file (`main.jsx` or `index.js`) uses a library called `ReactDOM`.
 3. **The Connection**: `ReactDOM.createRoot` "grabs" that root div.
 4. **The Render**: React pushes your components into that div.
-
+```
 
 
 ---
-
+```
 ## 📁 2. Folder Structure: CRA vs. Vite
 
 We compared the "Old Way" (**Create React App**) and the "Modern Way" (**Vite**).
@@ -38,9 +38,9 @@ We compared the "Old Way" (**Create React App**) and the "Modern Way" (**Vite**)
 | **Startup** | 🐌 Slow | ⚡ Fast |
 | **HTML Location** | `public/index.html` | Root `/index.html` |
 | **Main Extension** | `.js` or `.jsx` | Strictly `.jsx` |
-
+```
 ---
-
+```
 ## 🛠️ 3. Rules of Creating Components
 
 Hitesh emphasized these "Golden Rules" to avoid bugs:
@@ -62,13 +62,15 @@ function MyComponent() {
       <p>I am a fragment</p>
     </>
   )
+```
 =======
+```
 # ⚛️ React Deep Dive: Flow & Structure
 
 This repository contains my learning notes from the "Chai aur Code" React series. These notes focus on the inner workings of React, folder structures, and the logic behind how code translates into a webpage.
-
+```
 ---
-
+```
 ## 🚀 1. How React Actually Works (The Big Picture)
 
 A lot of beginners think React is magic, but it's just **JavaScript** being injected into **HTML**.
@@ -79,10 +81,10 @@ A lot of beginners think React is magic, but it's just **JavaScript** being inje
 3. **The Connection**: `ReactDOM.createRoot` "grabs" that root div.
 4. **The Render**: React pushes your components into that div.
 
-
+```
 
 ---
-
+```
 ## 📁 2. Folder Structure: CRA vs. Vite
 
 We compared the "Old Way" (**Create React App**) and the "Modern Way" (**Vite**).
@@ -102,9 +104,9 @@ We compared the "Old Way" (**Create React App**) and the "Modern Way" (**Vite**)
 | **Startup** | 🐌 Slow | ⚡ Fast |
 | **HTML Location** | `public/index.html` | Root `/index.html` |
 | **Main Extension** | `.js` or `.jsx` | Strictly `.jsx` |
-
+```
 ---
-
+```
 ## 🛠️ 3. Rules of Creating Components
 
 Hitesh emphasized these "Golden Rules" to avoid bugs:
@@ -117,8 +119,8 @@ Hitesh emphasized these "Golden Rules" to avoid bugs:
 ### 2. The Return Limit (The Fragment)
 A React component can only return **one** single element. You cannot return two `<h1>` tags side-by-side. 
 - **The Solution**: Wrap them in a "Fragment" (empty tags).
-
-```jsx
+```
+```
 function MyComponent() {
   return (
     <>
@@ -128,3 +130,4 @@ function MyComponent() {
   )
 >>>>>>> 5a824d9823f5e00571841e6496f63ec9e52e9660
 }
+```
