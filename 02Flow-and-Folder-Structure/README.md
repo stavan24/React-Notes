@@ -128,6 +128,6 @@ function MyComponent() {
       <p>I am a fragment</p>
     </>
   )
->>>>>>> 5a824d9823f5e00571841e6496f63ec9e52e9660
+
 }
 ```
