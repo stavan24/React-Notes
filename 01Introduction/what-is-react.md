@@ -4,7 +4,7 @@
 It helps developers create **dynamic, fast, and reusable components**.
 
 - 🏢 **Created by:** Facebook (Meta)  
-<<<<<<< HEAD
+
 - 💻 **Purpose:** Frontend development  
 =======
 - 💻 **Purpose:** Frontend development   
