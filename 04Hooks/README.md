@@ -61,7 +61,7 @@ Not beginner friendly
 
 ✅ After Hooks (Modern React)
 With hooks, everything becomes simple.
-```
+```jsx
 import { useState } from "react";
 
 function Counter() {
@@ -91,7 +91,7 @@ theme mode
 login status
 ```
 ❌ Normal Variable Problem
-```
+```js
 let count = 0;
 
 function increase() {
@@ -101,7 +101,7 @@ function increase() {
 UI will NOT update 😐
 
 Because React does not track normal variables.
-```
+```jsx
 ✅ useState Solution
 const [count, setCount] = useState(0);
 React now:
@@ -113,7 +113,7 @@ re-renders UI
 updates automatically
 
 🧠 useState Syntax Explained
-```
+```jsx
 const [state, setState] = useState(initialValue);
 Example:
 
@@ -132,7 +132,7 @@ When state updates:
 ✅ UI updates automatically
 
 🧪 Counter Example
-```
+```jsx
 import { useState } from "react";
 
 function App() {
@@ -176,7 +176,7 @@ Hooks allow:
 
 🧩 Hooks Make Components Reusable
 Example:
-```
+```jsx
 function InputBox() {
   const [text, setText] = useState("");
 
@@ -215,7 +215,7 @@ real-world thinking
 ✅ Interview confidence
 ```
 🧪 Simple Project Example (Input App)
-```
+```jsx
 import { useState } from "react";
 
 function App() {
@@ -247,7 +247,7 @@ re-render
 UI update
 
 🧠 Mental Model of React
-```
+```jsx
 UI = Function(State)
 If state changes → UI changes automatically.
 ```
@@ -261,21 +261,22 @@ updates virtual DOM
 compares changes
 
 updates minimal real DOM
-
+```
 ⚛️ Hooks Rules (VERY IMPORTANT)
 ❌ Don’t use hooks inside loops
 ❌ Don’t use hooks inside conditions
 ❌ Don’t use hooks inside functions
-
-✅ Always use hooks at top level
-
-Correct:
 ```
+```
+✅ Always use hooks at top level
+```
+Correct:
+```jsx
 useState();
 useEffect();
 ```
 Wrong:
-```
+```jsx
 if (true) {
   useState();
 }
