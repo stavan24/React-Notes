@@ -247,9 +247,10 @@ re-render
 UI update
 
 🧠 Mental Model of React
+```
 UI = Function(State)
 If state changes → UI changes automatically.
-
+```
 🔁 Re-render Explained
 When state changes:
 
@@ -269,14 +270,16 @@ updates minimal real DOM
 ✅ Always use hooks at top level
 
 Correct:
-
+```
 useState();
 useEffect();
+```
 Wrong:
-
+```
 if (true) {
   useState();
 }
+```
 🔥 Common Hooks You Will Learn
 Hook	Use
 useState	State management
