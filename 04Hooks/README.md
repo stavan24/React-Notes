@@ -15,7 +15,7 @@ Before learning hooks, many beginners ask:
 - 🤔 Why React UI updates automatically?
 - 🤔 Why projects are important while learning React?
 
-👉 This README explains **everything step by step**.
+👉 This README explains **everything step by step**.  
 
 ---
 
@@ -326,6 +326,7 @@ If this helped you:
 
 🔥 Happy Learning React Hooks ⚛️
 🚀 Build projects. Push commits. Grow daily.
+
 
 
 
