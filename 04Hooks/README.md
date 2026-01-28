@@ -81,7 +81,7 @@ What is State?
 State is data that can change.
 
 Examples:
-
+```
 counter value
 
 input text
@@ -89,21 +89,23 @@ input text
 theme mode
 
 login status
-
+```
 ❌ Normal Variable Problem
+```
 let count = 0;
 
 function increase() {
   count++;
 }
+```
 UI will NOT update 😐
 
 Because React does not track normal variables.
-
+```
 ✅ useState Solution
 const [count, setCount] = useState(0);
 React now:
-
+```
 tracks value
 
 re-renders UI
@@ -111,6 +113,7 @@ re-renders UI
 updates automatically
 
 🧠 useState Syntax Explained
+```
 const [state, setState] = useState(initialValue);
 Example:
 
@@ -120,7 +123,7 @@ count → current value
 setCount → function to update value
 
 0 → initial value
-
+```
 🔁 Updating State
 setCount(count + 1);
 When state updates:
@@ -129,6 +132,7 @@ When state updates:
 ✅ UI updates automatically
 
 🧪 Counter Example
+```
 import { useState } from "react";
 
 function App() {
@@ -146,6 +150,7 @@ function App() {
 }
 
 export default App;
+```
 This is the most basic React project.
 
 🧠 How React Thinks
@@ -171,7 +176,7 @@ Hooks allow:
 
 🧩 Hooks Make Components Reusable
 Example:
-
+```
 function InputBox() {
   const [text, setText] = useState("");
 
@@ -182,6 +187,7 @@ function InputBox() {
     />
   );
 }
+```
 Same logic can be reused everywhere.
 
 ⚡ Why Projects Are Important
@@ -196,7 +202,7 @@ how state flows
 how UI updates
 
 real-world thinking
-
+```
 🧠 Learning Without Project
 ❌ You forget concepts
 ❌ No confidence
@@ -207,8 +213,9 @@ real-world thinking
 ✅ Better understanding
 ✅ GitHub contribution
 ✅ Interview confidence
-
+```
 🧪 Simple Project Example (Input App)
+```
 import { useState } from "react";
 
 function App() {
@@ -228,6 +235,7 @@ function App() {
 }
 
 export default App;
+```
 This teaches:
 
 state
