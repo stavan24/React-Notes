@@ -4,7 +4,7 @@
 > 🎥 Topic: Virtual DOM, Reconciliation & Fiber Architecture  
 > ⭐ Must-know concepts to truly understand React
 
----
+---  
 
 ## 🌟 Why These Notes Matter
 
@@ -268,4 +268,5 @@ If this helped you:
 ```
 🔥 Happy Learning React ⚛️
 🚀 Keep building. Keep committing.
+
 ```
