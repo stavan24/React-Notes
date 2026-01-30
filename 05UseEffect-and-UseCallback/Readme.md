@@ -6,7 +6,7 @@
 
 ---  
 
-## 🌟 Why These Notes Matter
+## 🌟 Why These Notes Matter  
 
 Most developers use React daily but don’t know:
 
@@ -270,3 +270,4 @@ If this helped you:
 🚀 Keep building. Keep committing.
 
 ```
+
