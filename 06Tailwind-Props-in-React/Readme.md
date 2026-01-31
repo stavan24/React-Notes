@@ -165,8 +165,7 @@ function ProfileCard({ name, role }) {
     </div>
   );
 }
-```
-```jsx
+
 function App() {
   return (
     <div className="flex gap-4">
