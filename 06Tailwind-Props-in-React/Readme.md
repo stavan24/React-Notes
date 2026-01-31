@@ -38,13 +38,13 @@ props.name is data passed into it
 
 🔁 Example: Passing Props
 Parent Component
-```
+```jsx
 function App() {
   return <Greeting name="Stavan" />;
 }
 ```
 Child Component
-```
+```jsx
 function Greeting(props) {
   return <h1>Hello {props.name}!</h1>;
 }
@@ -60,7 +60,7 @@ Props are immutable:
 ❌ You cannot change them inside the child component.
 
 Right:
-```
+```jsx
 <Greeting name="Vaibhav" />
 ```
 Wrong:
@@ -70,7 +70,7 @@ Props should be treated as constant inputs.
 
 🏗 Props For Rendering Lists
 React can use props to render dynamic lists:
-```
+```jsx
 function PostList({ posts }) {
   return (
     <div>
@@ -89,7 +89,7 @@ posts is an array passed as prop
 
 🐣 Default Props Pattern
 A component can provide default values:
-```
+```jsx
 function UserCard({ name = "Guest" }) {
   return <h2>{name}</h2>;
 }
@@ -101,14 +101,14 @@ Tailwind CSS lets you style React components using utility classes.
 
 Example
 Instead of writing CSS rules:
-```
+```css
 .title {
   font-size: 2rem;
   font-weight: bold;
 }
 ```
 With Tailwind:
-```
+```html
 <h1 className="text-2xl font-bold text-center text-blue-500">
   Hello World
 </h1>
@@ -123,7 +123,7 @@ Easy to compose
 
 ⚛️ Combining React Props with Tailwind
 Props can control styles too!
-```
+```jsx
 function Button({ label, type }) {
   return (
     <button className={`px-4 py-2 rounded ${type}`}>
@@ -156,7 +156,7 @@ Help separate data from UI
 Enable composition of UI blocks
 
 🧪 Example: App With Props & Tailwind
-```
+```jsx
 function ProfileCard({ name, role }) {
   return (
     <div className="p-4 shadow rounded border border-gray-200">
@@ -166,7 +166,7 @@ function ProfileCard({ name, role }) {
   );
 }
 ```
-```
+```jsx
 function App() {
   return (
     <div className="flex gap-4">
