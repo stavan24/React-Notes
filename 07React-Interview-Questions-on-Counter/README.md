@@ -11,7 +11,7 @@
 The **Counter App** is one of the MOST asked React interview questions.
 
 Interviewers test:
-
+   
 🤔 How `useState` works  
 🤔 Why state updates behave unexpectedly       
 🤔 Re-rendering logic  
@@ -231,6 +231,7 @@ If this helped you:
 ```
 🔥 Happy Cracking React Interviews ⚛️
 🚀 Keep building. Keep committing.
+
 
 
 
