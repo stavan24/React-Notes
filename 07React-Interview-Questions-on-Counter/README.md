@@ -58,11 +58,11 @@ New UI is painted with updated count
 
 ❓ Interview Question 2
 👉 Why doesn’t state update immediately?
-```
+```jsx
 setCount(count + 1);
 console.log(count);
 ```
-```
+```jsx
 Output:
 
 0
@@ -76,7 +76,7 @@ State updates are scheduled, not instant
 count still holds old value in the same render
 
 🧠 React Mental Model
-```
+```jsx
 UI = f(state)
 ```
 State change → new render
@@ -87,7 +87,7 @@ React creates a NEW render snapshot
 
 ❓ Interview Question 3
 👉 What happens if we do this?
-```
+```jsx
 setCount(count + 1);
 setCount(count + 1);
 setCount(count + 1);
@@ -107,7 +107,7 @@ count is 0 in this render
 
 🔥 Solution: Functional Updates
 Correct way:
-```
+```jsx
 setCount(prev => prev + 1);
 setCount(prev => prev + 1);
 setCount(prev => prev + 1);
@@ -130,7 +130,7 @@ Batching means:
 👉 Performs only one re-render
 
 Example:
-```
+```jsx
 setCount(1);
 setCount(2);
 setCount(3);
@@ -149,7 +149,7 @@ Because:
 ✔ Recommended by React team
 
 🧠 Closure Problem Explained
-```
+```jsx
 function handleClick() {
   setTimeout(() => {
     setCount(count + 1);
@@ -163,7 +163,7 @@ count is captured from old render
 Leads to unexpected results
 
 Correct version:
-```
+```jsx
 setTimeout(() => {
   setCount(prev => prev + 1);
 }, 1000);
@@ -180,12 +180,12 @@ Optimization by default.
 
 🧪 Common Interview Traps
 ❌ Mutating state
-```
+```jsx
 count++;
 setCount(count);
 ```
 ❌ Expecting immediate update
-```
+```jsx
 setCount(1);
 console.log(count);
 ```
@@ -196,7 +196,7 @@ console.log(count);
 ✔ Don’t expect immediate state change
 ✔ Understand re-render cycle
 ✔ Keep logic inside render mental model
-
+```
 🧠 Interview Summary Table
 Concept	Meaning
 useState	State hook
@@ -207,6 +207,7 @@ Closure	Captured old state
 Re-render	New UI snapshot
 ❤️ Final Words
 If you understand this counter question, you understand:
+```
 
 useState
 
@@ -223,11 +224,11 @@ This is React fundamentals tested deeply.
 
 ⭐ Support
 If this helped you:
-
+```
 ⭐ Star the repo
 🔁 Share with friends
 📘 More React interview notes coming soon
-
+```
 🔥 Happy Cracking React Interviews ⚛️
 🚀 Keep building. Keep committing.
 
