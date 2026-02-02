@@ -40,7 +40,7 @@ function Counter() {
     </div>
   );
 }
-
+```
 export default Counter;
 ❓ Interview Question 1
 👉 What happens when button is clicked?
@@ -55,14 +55,17 @@ Component re-renders
 New UI is painted with updated count
 
 ⚠️ React does NOT update state immediately.
-
+```
 ❓ Interview Question 2
 👉 Why doesn’t state update immediately?
 setCount(count + 1);
 console.log(count);
+```
+```
 Output:
 
 0
+```
 Explanation:
 
 setCount is asynchronous
@@ -72,7 +75,9 @@ State updates are scheduled, not instant
 count still holds old value in the same render
 
 🧠 React Mental Model
+```
 UI = f(state)
+```
 State change → new render
 
 React NEVER mutates existing state
@@ -81,9 +86,11 @@ React creates a NEW render snapshot
 
 ❓ Interview Question 3
 👉 What happens if we do this?
+```
 setCount(count + 1);
 setCount(count + 1);
 setCount(count + 1);
+```
 Expected (wrong):
 
 3
@@ -99,10 +106,11 @@ count is 0 in this render
 
 🔥 Solution: Functional Updates
 Correct way:
-
+```
 setCount(prev => prev + 1);
 setCount(prev => prev + 1);
 setCount(prev => prev + 1);
+```
 Output:
 
 3
@@ -121,10 +129,11 @@ Batching means:
 👉 Performs only one re-render
 
 Example:
-
+```
 setCount(1);
 setCount(2);
 setCount(3);
+```
 React re-renders ONCE with final value.
 
 Batching improves performance.
@@ -139,11 +148,13 @@ Because:
 ✔ Recommended by React team
 
 🧠 Closure Problem Explained
+```
 function handleClick() {
   setTimeout(() => {
     setCount(count + 1);
   }, 1000);
 }
+```
 Problem:
 
 count is captured from old render
@@ -151,10 +162,11 @@ count is captured from old render
 Leads to unexpected results
 
 Correct version:
-
+```
 setTimeout(() => {
   setCount(prev => prev + 1);
 }, 1000);
+```
 ❓ Interview Question 6
 👉 Does React re-render on same state value?
 setCount(0);
@@ -167,13 +179,15 @@ Optimization by default.
 
 🧪 Common Interview Traps
 ❌ Mutating state
-
+```
 count++;
 setCount(count);
+```
 ❌ Expecting immediate update
-
+```
 setCount(1);
 console.log(count);
+```
 ❌ Multiple updates without functional form
 
 ✅ Best Practices for Counter Logic
