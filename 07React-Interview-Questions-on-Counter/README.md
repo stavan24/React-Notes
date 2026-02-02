@@ -5,7 +5,7 @@
 > ⭐ Covers state, re-rendering, batching & common mistakes  
 
 ---
-
+  
 ## 🌟 Why This Question Is Important
 
 The **Counter App** is one of the MOST asked React interview questions.
@@ -231,5 +231,6 @@ If this helped you:
 ```
 🔥 Happy Cracking React Interviews ⚛️
 🚀 Keep building. Keep committing.
+
 
 
