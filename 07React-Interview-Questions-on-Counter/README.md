@@ -7,7 +7,7 @@
 ---
         
 ## 🌟 Why This Question Is Important
-
+   
 The **Counter App** is one of the MOST asked React interview questions.
 
 Interviewers test:
@@ -231,6 +231,7 @@ If this helped you:
 ```
 🔥 Happy Cracking React Interviews ⚛️
 🚀 Keep building. Keep committing.
+
 
 
 
