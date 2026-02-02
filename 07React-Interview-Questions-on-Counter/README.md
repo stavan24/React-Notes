@@ -55,9 +55,10 @@ Component re-renders
 New UI is painted with updated count
 
 ⚠️ React does NOT update state immediately.
-```
+
 ❓ Interview Question 2
 👉 Why doesn’t state update immediately?
+```
 setCount(count + 1);
 console.log(count);
 ```
@@ -210,7 +211,7 @@ If you understand this counter question, you understand:
 useState
 
 Re-rendering
-
+  
 Performance
 
 React internals
