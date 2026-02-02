@@ -2,7 +2,7 @@
 
 > 📘 React Interview Notes  
 > 🎥 Topic: Counter Interview Question in React  
-> ⭐ Covers state, re-rendering, batching & common mistakes
+> ⭐ Covers state, re-rendering, batching & common mistakes  
 
 ---
 
@@ -231,4 +231,5 @@ If this helped you:
 ```
 🔥 Happy Cracking React Interviews ⚛️
 🚀 Keep building. Keep committing.
+
 
