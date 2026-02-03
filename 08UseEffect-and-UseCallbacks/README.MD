@@ -36,13 +36,13 @@ useEffect(() => {
 });
 ```
 If you want it to run only once:
-```
+```jsx
 useEffect(() => {
   console.log("Mounted!");
 }, []);
 ```
 If you want it to run when a value changes:
-```
+```jsx
 useEffect(() => {
   console.log("Value changed!");
 }, [value]);
@@ -75,7 +75,7 @@ Keeping previous values
 If you define functions inside components, React recreates them on each render.
 
 useCallback caches the function until dependencies change.
-```
+```jsx
 const doSomething = useCallback(() => {
   console.log("Clicked!");
 }, []);
@@ -84,7 +84,7 @@ Use this especially when passing functions as props to child components.
 
 🛠 Mini Project Example: Password Generator
 Here’s an example pattern like the one shown in the video (password generator):
-```
+```jsx
 import { useState, useRef, useCallback, useEffect } from "react";
 
 function App() {
