@@ -34,17 +34,19 @@ Basic syntax:
 useEffect(() => {
   console.log("Effect ran!");
 });
-
+```
 If you want it to run only once:
-
+```
 useEffect(() => {
   console.log("Mounted!");
 }, []);
+```
 If you want it to run when a value changes:
-
+```
 useEffect(() => {
   console.log("Value changed!");
 }, [value]);
+```
 🎯 Why useEffect Matters
 React components render based on state.
 But sometimes after UI updates, you need to run extra logic — that’s when useEffect is used.
@@ -60,7 +62,7 @@ Example:
 
 const inputRef = useRef(null);
 
-return <input ref={inputRef} />;
+return ```<input ref={inputRef} />```;
 Typical uses:
 
 Getting a DOM element
@@ -73,15 +75,16 @@ Keeping previous values
 If you define functions inside components, React recreates them on each render.
 
 useCallback caches the function until dependencies change.
-
+```
 const doSomething = useCallback(() => {
   console.log("Clicked!");
 }, []);
+```
 Use this especially when passing functions as props to child components.
 
 🛠 Mini Project Example: Password Generator
 Here’s an example pattern like the one shown in the video (password generator):
-
+```
 import { useState, useRef, useCallback, useEffect } from "react";
 
 function App() {
@@ -132,6 +135,7 @@ function App() {
 }
 
 export default App;
+```
 🔁 How These Hooks Work Together
 ✔ useState stores state (password and length)
 
@@ -142,7 +146,7 @@ export default App;
 ✔ useRef accesses the input for copying text
 
 This pattern makes the mini project efficient and clean.
-
+```
 🧠 Key Concepts Summary
 Hook	Purpose
 useState	Hold reactive data
@@ -159,7 +163,7 @@ useCallback	Function memoization
 ✅ useRef does not trigger re-renders
 
 These are common hooks interview topics in React.
-
+```
 ❤️ Final Thoughts
 Understanding how these hooks work together helps you build:
 
@@ -173,7 +177,8 @@ Hooks are essential for modern React projects.
 
 ⭐ Support
 If this helped you:
-
+```
 ⭐ Star this repository
 🔁 Share with friends
 📘 More React notes coming soon
+```
