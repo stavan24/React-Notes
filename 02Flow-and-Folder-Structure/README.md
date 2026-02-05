@@ -5,7 +5,7 @@ This repository contains my learning notes from the "Chai aur Code" React series
 
 ---
 ## 🚀 1. How React Actually Works (The Big Picture)
- 
+   
 
 A lot of beginners think React is magic, but it's just **JavaScript** being injected into **HTML**.
 
