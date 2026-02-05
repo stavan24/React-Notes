@@ -11,12 +11,12 @@ A lot of beginners think React is magic, but it's just **JavaScript** being inje
 
 
 ### The Flow:
-```
+
 1. **The Target**: There is a single file called `index.html` with a `<div id="root"></div>`.
 2. **The Brain**: A JavaScript file (`main.jsx` or `index.js`) uses a library called `ReactDOM`.
 3. **The Connection**: `ReactDOM.createRoot` "grabs" that root div.
 4. **The Render**: React pushes your components into that div.
-```
+
 
 
 ---
