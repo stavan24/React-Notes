@@ -118,7 +118,7 @@ export default Navbar;
 📌 Prevents page reload.
 
 🧠 NavLink (Active Styling)
-```
+```jsx
 import { NavLink } from "react-router-dom";
 
 <NavLink
