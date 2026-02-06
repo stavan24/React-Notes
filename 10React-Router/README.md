@@ -225,7 +225,7 @@ Nested Routes	Outlet
 ❌ Wrong path nesting
 ❌ Not using Outlet
 ```
-```
+```bash
 🧠 Mental Model
 URL changes
    ↓
