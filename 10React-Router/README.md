@@ -132,7 +132,7 @@ import { NavLink } from "react-router-dom";
 
 🔀 Dynamic Routes (URL Params)
 📄 Route Setup
-```
+```jsx
 <Route path="/user/:id" element={<User />} />
 📄 User.jsx
 import { useParams } from "react-router-dom";
