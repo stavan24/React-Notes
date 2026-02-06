@@ -155,7 +155,7 @@ Product pages
 Blog posts
 
 Example:
-```
+```t
 /user/101
 /product/iphone
 ```
