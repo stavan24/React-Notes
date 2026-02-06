@@ -82,7 +82,7 @@ export default App;
 ```
 🧩 Creating Pages
 📄 Home.jsx
-```
+```jsx
 function Home() {
   return <h1>Home Page</h1>;
 }
