@@ -160,7 +160,7 @@ Example:
 /product/iphone
 ```
 🧭 Programmatic Navigation — useNavigate
-```
+```jsx
 import { useNavigate } from "react-router-dom";
 
 function Login() {
