@@ -90,7 +90,7 @@ function Home() {
 export default Home;
 ```
 📄 About.jsx
-```
+```jsx
 function About() {
   return <h1>About Page</h1>;
 }
