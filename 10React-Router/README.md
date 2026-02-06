@@ -100,7 +100,7 @@ export default About;
 🔗 Navigation Using Link
 ❌ NEVER use `<a>` tags in React Router
 ✅ Use Link
-```
+```jsx
 import { Link } from "react-router-dom";
 
 function Navbar() {
