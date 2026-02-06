@@ -211,7 +211,7 @@ Uses history API
 <Routes> replaces <Switch>
 ```
 Link replaces `<a>`
-```
+```bash
 📊 React Router Cheat Sheet
 Feature	Hook / Component
 Navigation	Link, NavLink
