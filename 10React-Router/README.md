@@ -195,7 +195,7 @@ function Dashboard() {
 export default Dashboard;
 ```
 ❌ 404 Page (Not Found)
-```
+```jsx
 <Route path="*" element={<NotFound />} />
 function NotFound() {
   return <h1>404 Page Not Found</h1>;
