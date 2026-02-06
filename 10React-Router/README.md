@@ -254,7 +254,7 @@ If these notes helped you:
 🔁 Share with friends
 📘 More React notes coming soon
 ```
-```
+```bash
 🔥 Happy Routing
 ⚛️ Keep Building
 🚀 Keep Shipping
