@@ -207,7 +207,7 @@ React Router works on client side
 No full page reload
 
 Uses history API
-```
+```jsx
 <Routes> replaces <Switch>
 ```
 Link replaces `<a>`
