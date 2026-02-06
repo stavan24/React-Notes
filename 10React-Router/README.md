@@ -82,21 +82,25 @@ export default App;
 ```
 🧩 Creating Pages
 📄 Home.jsx
+```
 function Home() {
   return <h1>Home Page</h1>;
 }
 
 export default Home;
+```
 📄 About.jsx
+```
 function About() {
   return <h1>About Page</h1>;
 }
 
 export default About;
+```
 🔗 Navigation Using Link
-❌ NEVER use <a> tags in React Router
+❌ NEVER use `<a>` tags in React Router
 ✅ Use Link
-
+```
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -110,9 +114,11 @@ function Navbar() {
 }
 
 export default Navbar;
+```
 📌 Prevents page reload.
 
 🧠 NavLink (Active Styling)
+```
 import { NavLink } from "react-router-dom";
 
 <NavLink
@@ -121,10 +127,12 @@ import { NavLink } from "react-router-dom";
 >
   About
 </NavLink>
+```
 📌 Automatically adds active state.
 
 🔀 Dynamic Routes (URL Params)
 📄 Route Setup
+```
 <Route path="/user/:id" element={<User />} />
 📄 User.jsx
 import { useParams } from "react-router-dom";
@@ -136,6 +144,7 @@ function User() {
 }
 
 export default User;
+```
 🧠 Why Dynamic Routes?
 Used for:
 
@@ -146,10 +155,12 @@ Product pages
 Blog posts
 
 Example:
-
+```
 /user/101
 /product/iphone
+```
 🧭 Programmatic Navigation — useNavigate
+```
 import { useNavigate } from "react-router-dom";
 
 function Login() {
@@ -161,8 +172,10 @@ function Login() {
 
   return <button onClick={handleLogin}>Login</button>;
 }
+```
 🧩 Nested Routes
 📄 Parent Route
+```
 <Route path="/dashboard" element={<Dashboard />}>
   <Route path="profile" element={<Profile />} />
   <Route path="settings" element={<Settings />} />
@@ -180,22 +193,25 @@ function Dashboard() {
 }
 
 export default Dashboard;
+```
 ❌ 404 Page (Not Found)
+```
 <Route path="*" element={<NotFound />} />
 function NotFound() {
   return <h1>404 Page Not Found</h1>;
 }
+```
 🧠 Important Interview Concepts
 React Router works on client side
 
 No full page reload
 
 Uses history API
-
+```
 <Routes> replaces <Switch>
-
-Link replaces <a>
-
+```
+Link replaces `<a>`
+```
 📊 React Router Cheat Sheet
 Feature	Hook / Component
 Navigation	Link, NavLink
@@ -204,11 +220,12 @@ Params	useParams
 Redirect	useNavigate
 Nested Routes	Outlet
 ❌ Common Mistakes
-❌ Using <a href="">
+❌ Using `<a href="">`
 ❌ Forgetting BrowserRouter
 ❌ Wrong path nesting
 ❌ Not using Outlet
-
+```
+```
 🧠 Mental Model
 URL changes
    ↓
@@ -217,7 +234,7 @@ React Router matches route
 Component renders
 ⭐ Final Words
 React Router is mandatory for real React apps.
-
+```
 If you understand:
 
 Routing
@@ -232,11 +249,13 @@ Nested routes
 
 ⭐ Support
 If these notes helped you:
-
+```
 ⭐ Star the repo
 🔁 Share with friends
 📘 More React notes coming soon
-
+```
+```
 🔥 Happy Routing
 ⚛️ Keep Building
 🚀 Keep Shipping
+```
