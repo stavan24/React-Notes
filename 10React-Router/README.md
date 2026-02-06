@@ -249,7 +249,7 @@ Nested routes
 
 ⭐ Support
 If these notes helped you:
-```
+```bash
 ⭐ Star the repo
 🔁 Share with friends
 📘 More React notes coming soon
