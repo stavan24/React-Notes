@@ -4,7 +4,7 @@
 > 🎥 Based on: *React Router Crash Course*  
 > 🎯 Covers routing, navigation, params, nested routes & more
 
----
+---  
 
 ## 🚀 Why React Router Is Important
 
