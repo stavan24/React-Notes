@@ -1,133 +1,46 @@
-# 🌐 React Context API — Crash Course with 2 Projects
+# ⚛️ React Context API — 4 Complete Projects
 
-> 📘 Complete Beginner → Intermediate Notes  
-> 🎥 Topic: Context API Crash Course  
-> 🧠 Focus: Prop drilling, global state, Context, useContext, useReducer  
-> 🚀 Includes: 2 mini projects
-
----
-
-## 📌 What You Will Learn
-
-- What is prop drilling
-- Why Context API exists
-- How Context works internally
-- How to create and use context
-- useContext hook
-- useReducer with context
-- Two mini projects:
-  - Theme toggler
-  - Global state example
+> 📘 Practical Context API Projects  
+> 🚀 Beginner Friendly  
+> 🧠 Copy-paste ready code
 
 ---
 
-## 🤔 The Problem: Prop Drilling
+# PROJECT 1: THEME TOGGLER (LIGHT/DARK MODE)
 
-In React, data usually flows like this:
+---
+
+## Folder Structure
 
 ```
-App → Parent → Child → GrandChild
+src/
+ ├── context/
+ │   └── ThemeContext.jsx
+ ├── components/
+ │   └── ThemeButton.jsx
+ ├── App.jsx
+ └── main.jsx
 ```
 
-If **GrandChild** needs data from **App**, we must pass props through every level.
+---
 
-### Example of Prop Drilling
+## ThemeContext.jsx
 
 ```jsx
-function App() {
-  return <Parent theme="dark" />;
-}
-
-function Parent({ theme }) {
-  return <Child theme={theme} />;
-}
-
-function Child({ theme }) {
-  return <GrandChild theme={theme} />;
-}
-
-function GrandChild({ theme }) {
-  return <h1>{theme}</h1>;
-}
-```
-
-### Problems
-
-- Too many props
-- Hard to maintain
-- Unnecessary components passing data
-- Difficult debugging
-
----
-
-## 🌐 What Is Context API?
-
-Context API allows you to:
-
-✅ Share data globally  
-✅ Avoid prop drilling  
-✅ Access state anywhere in component tree  
-
-Context is used for:
-
-- Theme
-- Auth data
-- Language
-- Global settings
-
-Context lets components read data **without passing props manually**. :contentReference[oaicite:1]{index=1}
-
----
-
-## 🧠 Core Idea
-
-Instead of:
-
-```
-App → Parent → Child → GrandChild
-```
-
-With Context:
-
-```
-Context Provider
-       ↓
-Any Component can access the data
-```
-
----
-
-## 🏗️ Steps to Use Context API
-
-There are **3 main steps**:
-
-1. Create Context
-2. Provide Context
-3. Consume Context
-
----
-
-## Step 1: Create Context
-
-```jsx
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 export const ThemeContext = createContext();
-```
 
----
+export function ThemeProvider({ children }) {
+  const [dark, setDark] = useState(false);
 
-## Step 2: Provide Context
+  function toggleTheme() {
+    setDark(!dark);
+  }
 
-Wrap your app with a Provider.
-
-```jsx
-import { ThemeContext } from "./ThemeContext";
-
-function App() {
   return (
-    <ThemeContext.Provider value="dark">
-      <Home />
+    <ThemeContext.Provider value={{ dark, toggleTheme }}>
+      {children}
     </ThemeContext.Provider>
   );
 }
@@ -135,72 +48,179 @@ function App() {
 
 ---
 
-## Step 3: Consume Context (Old Way)
-
-Using **Consumer component**:
-
-```jsx
-import { ThemeContext } from "./ThemeContext";
-
-function Home() {
-  return (
-    <ThemeContext.Consumer>
-      {(theme) => <h1>{theme}</h1>}
-    </ThemeContext.Consumer>
-  );
-}
-```
-
----
-
-## Modern Way: useContext Hook
-
-Cleaner and easier.
+## ThemeButton.jsx
 
 ```jsx
 import { useContext } from "react";
-import { ThemeContext } from "./ThemeContext";
+import { ThemeContext } from "../context/ThemeContext";
 
-function Home() {
-  const theme = useContext(ThemeContext);
+function ThemeButton() {
+  const { dark, toggleTheme } = useContext(ThemeContext);
 
-  return <h1>{theme}</h1>;
+  return (
+    <div
+      style={{
+        background: dark ? "#111" : "#fff",
+        color: dark ? "#fff" : "#111",
+        height: "100vh",
+        padding: "40px",
+      }}
+    >
+      <h1>{dark ? "Dark Mode" : "Light Mode"}</h1>
+      <button onClick={toggleTheme}>
+        Toggle Theme
+      </button>
+    </div>
+  );
 }
+
+export default ThemeButton;
 ```
 
 ---
 
-# 🚀 Project 1: Theme Toggler
+## App.jsx
 
-Goal:
-- Light and dark theme
-- Toggle button
-- Global theme state
+```jsx
+import ThemeButton from "./components/ThemeButton";
+
+function App() {
+  return <ThemeButton />;
+}
+
+export default App;
+```
 
 ---
 
-# ⚽ PROJECT 1: FOOTBALL TEAM LINEUP BUILDER
+## main.jsx
 
-A real-world React project to build your dream football team.
+```jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { ThemeProvider } from "./context/ThemeContext";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <ThemeProvider>
+    <App />
+  </ThemeProvider>
+);
+```
 
 ---
 
-## 📂 Folder Structure
+# PROJECT 2: USER AUTH CONTEXT
+
+---
+
+## Folder Structure
 
 ```
 src/
  ├── context/
- │   └── TeamContext.jsx
+ │   └── AuthContext.jsx
  ├── components/
- │   ├── PlayerList.jsx
- │   └── Lineup.jsx
+ │   └── Profile.jsx
  ├── App.jsx
  └── main.jsx
 ```
 
 ---
 
-## 🧠 TeamContext.jsx
+## AuthContext.jsx
+
+```jsx
+import { createContext, useState } from "react";
+
+export const AuthContext = createContext();
+
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(null);
+
+  function login() {
+    setUser("Stavan");
+  }
+
+  function logout() {
+    setUser(null);
+  }
+
+  return (
+    <AuthContext.Provider value={{ user, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+}
+```
+
+---
+
+## Profile.jsx
+
+```jsx
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+
+function Profile() {
+  const { user, login, logout } = useContext(AuthContext);
+
+  return (
+    <div>
+      <h1>User Profile</h1>
+      {user ? (
+        <>
+          <h2>Welcome, {user}</h2>
+          <button onClick={logout}>Logout</button>
+        </>
+      ) : (
+        <button onClick={login}>Login</button>
+      )}
+    </div>
+  );
+}
+
+export default Profile;
+```
+
+---
+
+## App.jsx
+
+```jsx
+import Profile from "./components/Profile";
+
+function App() {
+  return <Profile />;
+}
+
+export default App;
+```
+
+---
+
+## main.jsx
+
+```jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { AuthProvider } from "./context/AuthContext";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <AuthProvider>
+    <App />
+  </AuthProvider>
+);
+```
+
+---
+
+# PROJECT 3: FOOTBALL TEAM LINEUP BUILDER
+
+---
+
+## TeamContext.jsx
 
 ```jsx
 import { createContext, useState } from "react";
@@ -228,7 +248,7 @@ export function TeamProvider({ children }) {
 
 ---
 
-## 👥 PlayerList.jsx
+## PlayerList.jsx
 
 ```jsx
 import { useContext, useState } from "react";
@@ -242,9 +262,9 @@ function PlayerList() {
     <div>
       <h2>Add Player</h2>
       <input
-        placeholder="Player name"
         value={name}
         onChange={(e) => setName(e.target.value)}
+        placeholder="Player name"
       />
       <button onClick={() => addPlayer(name)}>Add</button>
     </div>
@@ -256,7 +276,7 @@ export default PlayerList;
 
 ---
 
-## 🏟️ Lineup.jsx
+## Lineup.jsx
 
 ```jsx
 import { useContext } from "react";
@@ -268,10 +288,10 @@ function Lineup() {
   return (
     <div>
       <h2>Team Lineup</h2>
-      {players.map((player) => (
-        <div key={player}>
-          {player}
-          <button onClick={() => removePlayer(player)}>❌</button>
+      {players.map((p) => (
+        <div key={p}>
+          {p}
+          <button onClick={() => removePlayer(p)}>❌</button>
         </div>
       ))}
     </div>
@@ -283,7 +303,7 @@ export default Lineup;
 
 ---
 
-## 🧩 App.jsx
+## App.jsx
 
 ```jsx
 import PlayerList from "./components/PlayerList";
@@ -292,7 +312,7 @@ import Lineup from "./components/Lineup";
 function App() {
   return (
     <div>
-      <h1>⚽ Football Team Builder</h1>
+      <h1>⚽ Team Builder</h1>
       <PlayerList />
       <Lineup />
     </div>
@@ -304,45 +324,11 @@ export default App;
 
 ---
 
-## 🚀 main.jsx
-
-```jsx
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import { TeamProvider } from "./context/TeamContext";
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <TeamProvider>
-    <App />
-  </TeamProvider>
-);
-```
+# PROJECT 4: QUIZ APP
 
 ---
 
-# 🧠 PROJECT 2: QUIZ APP (CONTEXT API)
-
-A fully functional quiz app with global state.
-
----
-
-## 📂 Folder Structure
-
-```
-src/
- ├── context/
- │   └── QuizContext.jsx
- ├── components/
- │   ├── Question.jsx
- │   └── Result.jsx
- ├── App.jsx
- └── main.jsx
-```
-
----
-
-## 🧠 QuizContext.jsx
+## QuizContext.jsx
 
 ```jsx
 import { createContext, useState } from "react";
@@ -382,7 +368,7 @@ export function QuizProvider({ children }) {
 
 ---
 
-## ❓ Question.jsx
+## Question.jsx
 
 ```jsx
 import { useContext } from "react";
@@ -416,7 +402,7 @@ export default Question;
 
 ---
 
-## 🏁 Result.jsx
+## Result.jsx
 
 ```jsx
 import { useContext } from "react";
@@ -435,7 +421,7 @@ export default Result;
 
 ---
 
-## 🧩 App.jsx
+## App.jsx
 
 ```jsx
 import Question from "./components/Question";
@@ -444,7 +430,7 @@ import Result from "./components/Result";
 function App() {
   return (
     <div>
-      <h1>🧠 Quiz App</h1>
+      <h1>Quiz App</h1>
       <Question />
       <Result />
     </div>
@@ -456,362 +442,16 @@ export default App;
 
 ---
 
-## 🚀 main.jsx
-
-```jsx
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import { QuizProvider } from "./context/QuizContext";
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <QuizProvider>
-    <App />
-  </QuizProvider>
-);
-```
-
----
-
-# 🎯 WHAT YOU LEARN FROM THESE PROJECTS
-
-✅ Context API in real apps  
-✅ Global state management  
-✅ Component communication  
-✅ Clean folder structure  
-✅ Interview-ready logic  
-
----
-
-# ❤️ FINAL WORDS
-
-These are **REAL projects**, not demos.
-
-If you can build these,
-👉 React Context will NEVER confuse you again.
-
-
-## Step 1: Create Context
-
-```jsx
-import { createContext } from "react";
-
-export const ThemeContext = createContext();
-```
-
----
-
-## Step 2: Create Provider
-
-```jsx
-import { useState } from "react";
-import { ThemeContext } from "./ThemeContext";
-
-function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState("light");
-
-  function toggleTheme() {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
-  }
-
-  return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
-}
-
-export default ThemeProvider;
-```
-
----
-
-## Step 3: Wrap App
-
-```jsx
-import ThemeProvider from "./ThemeProvider";
-import Home from "./Home";
-
-function App() {
-  return (
-    <ThemeProvider>
-      <Home />
-    </ThemeProvider>
-  );
-}
-```
-
----
-
-## Step 4: Use Context in Component
-
-```jsx
-import { useContext } from "react";
-import { ThemeContext } from "./ThemeContext";
-
-function Home() {
-  const { theme, toggleTheme } = useContext(ThemeContext);
-
-  return (
-    <div
-      style={{
-        background: theme === "light" ? "#fff" : "#111",
-        color: theme === "light" ? "#111" : "#fff",
-        height: "100vh",
-      }}
-    >
-      <h1>Current Theme: {theme}</h1>
-      <button onClick={toggleTheme}>Toggle Theme</button>
-    </div>
-  );
-}
-
-export default Home;
-```
-
----
-
-# ⚙️ Project 2: Global State with useReducer + Context
-
-Used for:
-
-- Complex state
-- Multiple actions
-- Global app logic
-
----
-
-## Step 1: Create Context
-
-```jsx
-import { createContext } from "react";
-
-export const CounterContext = createContext();
-```
-
----
-
-## Step 2: Create Reducer
-
-```jsx
-function reducer(state, action) {
-  switch (action.type) {
-    case "INCREMENT":
-      return { count: state.count + 1 };
-
-    case "DECREMENT":
-      return { count: state.count - 1 };
-
-    default:
-      return state;
-  }
-}
-```
-
----
-
-## Step 3: Create Provider
-
-```jsx
-import { useReducer } from "react";
-import { CounterContext } from "./CounterContext";
-
-function CounterProvider({ children }) {
-  const [state, dispatch] = useReducer(reducer, { count: 0 });
-
-  return (
-    <CounterContext.Provider value={{ state, dispatch }}>
-      {children}
-    </CounterContext.Provider>
-  );
-}
-
-export default CounterProvider;
-```
-
----
-
-## Step 4: Wrap App
-
-```jsx
-import CounterProvider from "./CounterProvider";
-import Counter from "./Counter";
-
-function App() {
-  return (
-    <CounterProvider>
-      <Counter />
-    </CounterProvider>
-  );
-}
-```
-
----
-
-## Step 5: Use in Component
-
-```jsx
-import { useContext } from "react";
-import { CounterContext } from "./CounterContext";
-
-function Counter() {
-  const { state, dispatch } = useContext(CounterContext);
-
-  return (
-    <div>
-      <h1>Count: {state.count}</h1>
-
-      <button onClick={() => dispatch({ type: "INCREMENT" })}>
-        +
-      </button>
-
-      <button onClick={() => dispatch({ type: "DECREMENT" })}>
-        -
-      </button>
-    </div>
-  );
-}
-
-export default Counter;
-```
-
----
-
-# 🧠 Key Concepts to Remember
-
-## Context Flow
-
-```
-createContext()
-      ↓
-Provider wraps app
-      ↓
-useContext() reads data
-```
-
----
-
-## When to Use Context
-
-Use Context for:
-
-- Theme
-- Auth
-- Language
-- Global settings
-
-Avoid for:
-
-- Very frequently changing data
-- Huge state logic (use Redux/Zustand instead)
-
----
-
-## Context vs Props
-
-| Feature | Props | Context |
-|--------|------|--------|
-| Scope | Parent → Child | Global |
-| Setup | Simple | Needs provider |
-| Use case | Small data flow | Global state |
-| Prop drilling | Yes | No |
-
----
-
-## Context with useReducer
-
-Best for:
-
-- Complex state
-- Multiple actions
-- App-level logic
-
----
-
-# 🧪 Mental Model
-
-Without Context:
-
-```
-Data → Passed through every component
-```
-
-With Context:
-
-```
-Data → Stored globally
-Components → Read directly
-```
-
----
-
-# 🧠 Interview Questions
-
-### 1. What is Context API?
-
-Context API is a way to share global data across components without prop drilling. :contentReference[oaicite:2]{index=2}
-
----
-
-### 2. What problem does Context solve?
-
-It solves **prop drilling**.
-
----
-
-### 3. What are the main parts of Context?
-
-- createContext
-- Provider
-- Consumer / useContext
-
----
-
-### 4. When should you not use Context?
-
-- Very frequent updates
-- Large complex state
-
----
-
-### 5. Difference between Redux and Context?
-
-| Redux | Context |
-|------|--------|
-| External library | Built into React |
-| Complex state | Simple global state |
-| Middleware support | No middleware |
-| Large apps | Small to medium apps |
-
----
-
-# 📚 Final Summary
-
-| Concept | Meaning |
-|--------|--------|
-| Context API | Global state sharing |
-| Provider | Supplies data |
-| Consumer | Reads data |
-| useContext | Hook to access context |
-| useReducer | Complex state logic |
-| Prop drilling | Passing props through many levels |
-
----
-
-# ❤️ Final Words
-
-“If props feel painful,  
-Context is the relief.”
-
-Context API is:
-
-- Simple
-- Built into React
-- Powerful for global state
+# 🎯 What You Learn
+
+- Context API fundamentals
+- Global state management
+- Real-world React patterns
+- Component communication
+- Interview-ready logic
 
 ---
 
 ⭐ Star the repo  
-📘 More React notes coming soon  
-🚀 Keep building. Keep committing.
-
+🚀 Keep building  
+⚛️ Keep learning React
