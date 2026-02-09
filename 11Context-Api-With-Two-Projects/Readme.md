@@ -179,6 +179,318 @@ Goal:
 
 ---
 
+# ⚽ PROJECT 1: FOOTBALL TEAM LINEUP BUILDER
+
+A real-world React project to build your dream football team.
+
+---
+
+## 📂 Folder Structure
+
+```
+src/
+ ├── context/
+ │   └── TeamContext.jsx
+ ├── components/
+ │   ├── PlayerList.jsx
+ │   └── Lineup.jsx
+ ├── App.jsx
+ └── main.jsx
+```
+
+---
+
+## 🧠 TeamContext.jsx
+
+```jsx
+import { createContext, useState } from "react";
+
+export const TeamContext = createContext();
+
+export function TeamProvider({ children }) {
+  const [players, setPlayers] = useState([]);
+
+  function addPlayer(name) {
+    setPlayers([...players, name]);
+  }
+
+  function removePlayer(name) {
+    setPlayers(players.filter((p) => p !== name));
+  }
+
+  return (
+    <TeamContext.Provider value={{ players, addPlayer, removePlayer }}>
+      {children}
+    </TeamContext.Provider>
+  );
+}
+```
+
+---
+
+## 👥 PlayerList.jsx
+
+```jsx
+import { useContext, useState } from "react";
+import { TeamContext } from "../context/TeamContext";
+
+function PlayerList() {
+  const { addPlayer } = useContext(TeamContext);
+  const [name, setName] = useState("");
+
+  return (
+    <div>
+      <h2>Add Player</h2>
+      <input
+        placeholder="Player name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <button onClick={() => addPlayer(name)}>Add</button>
+    </div>
+  );
+}
+
+export default PlayerList;
+```
+
+---
+
+## 🏟️ Lineup.jsx
+
+```jsx
+import { useContext } from "react";
+import { TeamContext } from "../context/TeamContext";
+
+function Lineup() {
+  const { players, removePlayer } = useContext(TeamContext);
+
+  return (
+    <div>
+      <h2>Team Lineup</h2>
+      {players.map((player) => (
+        <div key={player}>
+          {player}
+          <button onClick={() => removePlayer(player)}>❌</button>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default Lineup;
+```
+
+---
+
+## 🧩 App.jsx
+
+```jsx
+import PlayerList from "./components/PlayerList";
+import Lineup from "./components/Lineup";
+
+function App() {
+  return (
+    <div>
+      <h1>⚽ Football Team Builder</h1>
+      <PlayerList />
+      <Lineup />
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+## 🚀 main.jsx
+
+```jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { TeamProvider } from "./context/TeamContext";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <TeamProvider>
+    <App />
+  </TeamProvider>
+);
+```
+
+---
+
+# 🧠 PROJECT 2: QUIZ APP (CONTEXT API)
+
+A fully functional quiz app with global state.
+
+---
+
+## 📂 Folder Structure
+
+```
+src/
+ ├── context/
+ │   └── QuizContext.jsx
+ ├── components/
+ │   ├── Question.jsx
+ │   └── Result.jsx
+ ├── App.jsx
+ └── main.jsx
+```
+
+---
+
+## 🧠 QuizContext.jsx
+
+```jsx
+import { createContext, useState } from "react";
+
+export const QuizContext = createContext();
+
+const questions = [
+  {
+    q: "What is React?",
+    a: "Library",
+    options: ["Framework", "Library", "Language"],
+  },
+  {
+    q: "JSX stands for?",
+    a: "JavaScript XML",
+    options: ["JSON", "Java XML", "JavaScript XML"],
+  },
+];
+
+export function QuizProvider({ children }) {
+  const [index, setIndex] = useState(0);
+  const [score, setScore] = useState(0);
+
+  function next() {
+    setIndex(index + 1);
+  }
+
+  return (
+    <QuizContext.Provider
+      value={{ questions, index, score, setScore, next }}
+    >
+      {children}
+    </QuizContext.Provider>
+  );
+}
+```
+
+---
+
+## ❓ Question.jsx
+
+```jsx
+import { useContext } from "react";
+import { QuizContext } from "../context/QuizContext";
+
+function Question() {
+  const { questions, index, setScore, next } = useContext(QuizContext);
+  const current = questions[index];
+
+  if (!current) return null;
+
+  function check(ans) {
+    if (ans === current.a) setScore((s) => s + 1);
+    next();
+  }
+
+  return (
+    <div>
+      <h2>{current.q}</h2>
+      {current.options.map((opt) => (
+        <button key={opt} onClick={() => check(opt)}>
+          {opt}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+export default Question;
+```
+
+---
+
+## 🏁 Result.jsx
+
+```jsx
+import { useContext } from "react";
+import { QuizContext } from "../context/QuizContext";
+
+function Result() {
+  const { score, questions, index } = useContext(QuizContext);
+
+  if (index < questions.length) return null;
+
+  return <h2>Final Score: {score}/{questions.length}</h2>;
+}
+
+export default Result;
+```
+
+---
+
+## 🧩 App.jsx
+
+```jsx
+import Question from "./components/Question";
+import Result from "./components/Result";
+
+function App() {
+  return (
+    <div>
+      <h1>🧠 Quiz App</h1>
+      <Question />
+      <Result />
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+## 🚀 main.jsx
+
+```jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { QuizProvider } from "./context/QuizContext";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <QuizProvider>
+    <App />
+  </QuizProvider>
+);
+```
+
+---
+
+# 🎯 WHAT YOU LEARN FROM THESE PROJECTS
+
+✅ Context API in real apps  
+✅ Global state management  
+✅ Component communication  
+✅ Clean folder structure  
+✅ Interview-ready logic  
+
+---
+
+# ❤️ FINAL WORDS
+
+These are **REAL projects**, not demos.
+
+If you can build these,
+👉 React Context will NEVER confuse you again.
+
+
 ## Step 1: Create Context
 
 ```jsx
