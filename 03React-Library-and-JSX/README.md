@@ -122,7 +122,7 @@ myReact/
 </body>
 </html>
 ```
-```react
+```jsx
 ⚙️ customReact.js
 Step 1: Create React Element
 const reactElement = {
@@ -134,8 +134,8 @@ const reactElement = {
   children: "Go to Google"
 };
 ```
-```
 Step 2: Create Render Function
+```jsx
 function customRender(element, container) {
   const domElement = document.createElement(element.type);
 
@@ -148,8 +148,8 @@ function customRender(element, container) {
   container.appendChild(domElement);
 }
 ```
-```
 Step 3: Render to DOM
+```jsx
 const root = document.getElementById("root");
 customRender(reactElement, root);
 🔥 You just created your own React-like renderer.
