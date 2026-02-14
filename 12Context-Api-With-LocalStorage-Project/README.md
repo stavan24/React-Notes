@@ -45,7 +45,7 @@ src/
 ---
 
 ## 🧠 Context Setup — TodoContext.jsx
-
+  
 This stores tasks globally and syncs with localStorage.
 
 ```jsx
@@ -330,6 +330,7 @@ This eliminates **prop drilling** and keeps code clean. :contentReference[oaicit
 This project is **both educational and practical** — you can use it as a portfolio piece or learning resource.
 
 Happy coding ⚛️🚀
+
 
 
 
