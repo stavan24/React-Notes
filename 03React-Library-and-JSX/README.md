@@ -122,9 +122,9 @@ myReact/
 </body>
 </html>
 ```
-```jsx
 ⚙️ customReact.js
 Step 1: Create React Element
+```jsx
 const reactElement = {
   type: "a",
   props: {
