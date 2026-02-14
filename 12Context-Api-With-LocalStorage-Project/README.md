@@ -16,7 +16,7 @@ A **to-do list app** that lets users:
 - Delete tasks
 - Persist tasks in `localStorage`
 
-This uses:
+This uses:  
 
 ✅ React Context API      
 ✅ `useContext`, `useReducer` / `useState`  
@@ -330,6 +330,7 @@ This eliminates **prop drilling** and keeps code clean. :contentReference[oaicit
 This project is **both educational and practical** — you can use it as a portfolio piece or learning resource.
 
 Happy coding ⚛️🚀
+
 
 
 
