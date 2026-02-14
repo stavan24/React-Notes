@@ -1,5 +1,5 @@
 # 🗃️ React Context API + Local Storage Project  
-
+  
 > 📘 Context API with localStorage — Full Project  
 > 🚀 Real-world React App  
 > 🧠 Save tasks persistently + manage global state
@@ -330,6 +330,7 @@ This eliminates **prop drilling** and keeps code clean. :contentReference[oaicit
 This project is **both educational and practical** — you can use it as a portfolio piece or learning resource.
 
 Happy coding ⚛️🚀
+
 
 
 
