@@ -23,7 +23,7 @@ But they don’t know:
 
 🤔 Why React is fast
 
-🤔 What happens inside ReactDOM.createRoot()
+🤔 What happens inside ```ReactDOM.createRoot()```
 
 👉 These notes explain React from inside, not outside.
 
@@ -42,10 +42,12 @@ React is:
 ✅ Smart DOM handling
 
 ❌ Traditional DOM Approach
+```jsx
 const h1 = document.createElement("h1");
 h1.innerText = "Hello World";
 
 document.getElementById("root").appendChild(h1);
+```
 Problems  
 Too much code
 
