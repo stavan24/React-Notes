@@ -3,7 +3,7 @@
 > 🧠 Based on: *What is your choice for Mega Project in React?*  
 > 📖 Choosing projects that level up your real-world React skills  
 > 🚀 Helpful for planning your learning and GitHub portfolio
-
+  
 ---
 
 ## 🤔 Hard Way vs Easy Way
