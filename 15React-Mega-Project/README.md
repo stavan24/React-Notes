@@ -213,6 +213,7 @@ function Navbar() {
 export default Navbar;
 ```
 🧠 Pages (Home.jsx)
+```jsx
 import { useDispatch, useSelector } from "react-redux";
 import { searchMovies } from "../features/movies/movieSlice";
 import MovieList from "../features/movies/MovieList";
@@ -234,7 +235,7 @@ function Home() {
 }
 
 export default Home;
-
+```
 🧠 MovieCard.jsx
 function MovieCard({ movie }) {
   return (
