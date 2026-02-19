@@ -139,6 +139,7 @@ export const store = configureStore({
 });
 ```
 🧱 Auth Slice (authSlice.js)
+```jsx
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -163,7 +164,7 @@ const authSlice = createSlice({
 
 export const { loginSuccess, logout } = authSlice.actions;
 export default authSlice.reducer;
-
+```
 🧠 Movie Slice (movieSlice.js)
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { fetchMovies } from "../../api/movieApi";
