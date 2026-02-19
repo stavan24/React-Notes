@@ -197,6 +197,7 @@ const movieSlice = createSlice({
 export default movieSlice.reducer;
 ```
 🧩 UI Components (Navbar.jsx)
+```jsx
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -210,7 +211,7 @@ function Navbar() {
 }
 
 export default Navbar;
-
+```
 🧠 Pages (Home.jsx)
 import { useDispatch, useSelector } from "react-redux";
 import { searchMovies } from "../features/movies/movieSlice";
