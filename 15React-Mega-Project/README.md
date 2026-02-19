@@ -166,6 +166,7 @@ export const { loginSuccess, logout } = authSlice.actions;
 export default authSlice.reducer;
 ```
 🧠 Movie Slice (movieSlice.js)
+```jsx
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { fetchMovies } from "../../api/movieApi";
 
@@ -194,7 +195,7 @@ const movieSlice = createSlice({
 });
 
 export default movieSlice.reducer;
-
+```
 🧩 UI Components (Navbar.jsx)
 import { Link } from "react-router-dom";
 
