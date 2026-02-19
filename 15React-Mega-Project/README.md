@@ -49,11 +49,15 @@ Real mega projects help you:
 A true production app includes:
 ```
  Routing & navigation
+
  Global state (Redux Toolkit / Context)
+
  API / backend
+
  Auth (login, signup)
+
  LocalStorage or DB persistence
- 
+
  Search & filters
 
  Pagination
@@ -69,7 +73,7 @@ A true production app includes:
 ➡️ Movie Streaming App (Netflix Clone)
 
 This covers almost everything you need as a React developer:
-
+```
 🔹 Authentication (Login/Signup)
 🔹 Multiple pages & routing
 🔹 Search
@@ -80,8 +84,9 @@ This covers almost everything you need as a React developer:
 🔹 Dark/Light theme
 🔹 Responsive UI
 🔹 Deployment
-
+```
 🗂 Folder Structure
+```
 src/
  ├── api/
  │   └── movieApi.js
@@ -108,8 +113,9 @@ src/
  │   └── main.css
  ├── App.jsx
  └── main.jsx
-
+```
 📦 API Setup (movieApi.js)
+```jsx
 const API_KEY = "YOUR_API_KEY";
 const BASE_URL = "https://api.themoviedb.org/3";
 
