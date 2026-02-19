@@ -237,6 +237,7 @@ function Home() {
 export default Home;
 ```
 🧠 MovieCard.jsx
+```jsx
 function MovieCard({ movie }) {
   return (
     <div>
@@ -247,7 +248,7 @@ function MovieCard({ movie }) {
 }
 
 export default MovieCard;
-
+```
 🧠 Watchlist.jsx
 function Watchlist() {
   return <h1>Your Watchlist</h1>;
