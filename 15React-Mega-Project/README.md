@@ -123,8 +123,10 @@ export async function fetchMovies(term) {
   const res = await fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${term}`);
   return res.json();
 }
+```
 
 🛠 Redux Store (store.js)
+```jsx
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "../features/auth/authSlice";
 import movieReducer from "../features/movies/movieSlice";
@@ -135,7 +137,7 @@ export const store = configureStore({
     movies: movieReducer,
   },
 });
-
+```
 🧱 Auth Slice (authSlice.js)
 import { createSlice } from "@reduxjs/toolkit";
 
