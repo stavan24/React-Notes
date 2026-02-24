@@ -3,7 +3,7 @@
 Notes from “Our Mega Project in React | The Hard Way” by Hitesh
 
 🚀 What “The Hard Way” Means
-
+ 
 Most beginners build:
 
 Todo apps
@@ -330,3 +330,4 @@ Don’t stop at small apps —
 Build full production projects.
 
 That’s the hard way — and the fastest way to get real skills.
+
