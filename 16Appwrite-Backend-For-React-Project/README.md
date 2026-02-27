@@ -75,7 +75,7 @@ Database / Auth / Storage
 npm install appwrite
 ```
 # 📁 Recommended Folder Structure
-```
+```jsx
 src/
  ├── appwrite/
  │   ├── config.js
@@ -90,7 +90,7 @@ src/
  ```
 ⚙️ Appwrite Configuration
 appwrite/config.js
-```
+```jsx
 import { Client } from "appwrite";
 
 const client = new Client();
