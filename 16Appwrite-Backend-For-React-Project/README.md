@@ -239,6 +239,7 @@ function Dashboard() {
 export default Dashboard;
 ```
 🧠 App.jsx
+```
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
@@ -255,6 +256,7 @@ function App() {
 }
 
 export default App;
+```
 🎯 What You Learn
 
 ✅ Real backend integration
