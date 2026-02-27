@@ -257,8 +257,8 @@ function App() {
 
 export default App;
 ```
+# 🎯 What You Learn
 ```
-🎯 What You Learn
 
 ✅ Real backend integration
 ✅ Authentication system
@@ -266,7 +266,8 @@ export default App;
 ✅ API communication
 ✅ Production-ready architecture
 ```
-🧠 Interview Questions
+# 🧠 Interview Questions
+```
 
 Q. What is Appwrite?
 👉 Open-source Backend-as-a-Service.
@@ -276,19 +277,21 @@ Q. Why use Appwrite instead of Firebase?
 
 Q. What services does Appwrite provide?
 👉 Auth, Database, Storage, Functions.
-
+```
 ⭐ Final Words
 
 Frontend alone is not enough.
 Real developers build full-stack apps.
 
 With React + Appwrite you can build:
-
+```
 ✅ Social apps
 ✅ Portfolio with login
 ✅ Notes app with database
 ✅ Football team manager ⚽
-
+```
+```
 ⭐ Star the repo
 🚀 Build real apps
 ⚛️ Become production-ready
+```
