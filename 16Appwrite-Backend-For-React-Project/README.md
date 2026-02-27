@@ -103,7 +103,7 @@ export default client;
 ```
 🔐 Authentication Service
 appwrite/auth.js
-```
+```jsx
 import { Account } from "appwrite";
 import client from "./config";
 
