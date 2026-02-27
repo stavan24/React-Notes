@@ -239,7 +239,7 @@ function Dashboard() {
 export default Dashboard;
 ```
 🧠 App.jsx
-```
+```jsx
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
