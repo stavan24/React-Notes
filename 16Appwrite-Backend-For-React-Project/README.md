@@ -203,7 +203,7 @@ function Login() {
 export default Login;
 ```
 📊 Dashboard With Database
-```
+```jsx
 import { useEffect, useState } from "react";
 import { addDocument, getDocuments } from "../appwrite/database";
 
