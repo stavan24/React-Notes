@@ -173,7 +173,7 @@ function Signup() {
 export default Signup;
 ```
 🔐 Login Component
-```
+```jsx
 import { useState } from "react";
 import { login } from "../appwrite/auth";
 
