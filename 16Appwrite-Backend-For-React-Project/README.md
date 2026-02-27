@@ -257,6 +257,7 @@ function App() {
 
 export default App;
 ```
+```
 🎯 What You Learn
 
 ✅ Real backend integration
@@ -264,7 +265,7 @@ export default App;
 ✅ Database CRUD
 ✅ API communication
 ✅ Production-ready architecture
-
+```
 🧠 Interview Questions
 
 Q. What is Appwrite?
